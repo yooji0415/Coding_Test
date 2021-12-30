@@ -43,7 +43,7 @@ def solution(numbers, hand):
 
 # 모범답안
 # 제출한 답안과 유사하기 때문에 추가적인 설명은 하지 않았다.
-def solution(numbers, hand):
+def best_solution(numbers, hand):
     answer = ''
     location = [[3, 1], [0, 0], [0, 1], [0, 2], [1, 0], [1, 1], [1, 2], [2, 0], [2, 1], [2, 2]]
     left, right = [3, 0], [3, 2]

@@ -27,7 +27,7 @@ def solution(new_id):
 
 
 # 모범답안
-def solution(new_id):
+def best_solution(new_id):
     answer = ''
     # 1번 lower 함수를 통해 대문자를 소문자로 바꾼다.
     new_id = new_id.lower()
