@@ -1,15 +1,26 @@
 import sys
-from itertools import permutations
 
 
 n = int(sys.stdin.readline().strip())
-n_list = [x for x in range(1, n+1)]
-p_list = list(permutations(n_list, n))
+seq = [int(x) for x in sys.stdin.readline().split()]
 
-p_in = tuple(map(int, sys.stdin.readline().split()))
-idx = p_list.index(p_in)
-if idx == 0:
+k = -1
+m = -1
+for i in range(len(seq) - 1):
+    if seq[i] > seq[i + 1]:
+        k = i
+
+if k == -1:
     print(-1)
 else:
-    for num in p_list[idx - 1]:
+    for j in range(k + 1, len(seq)):
+        if seq[j] < seq[k]:
+            m = j
+
+    seq[k], seq[m] = seq[m], seq[k]
+    temp = seq[k + 1:]
+    temp.sort(reverse=True)
+    answer = seq[:k + 1] + temp
+
+    for num in answer:
         print(num, end=" ")
